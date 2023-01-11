@@ -8,7 +8,7 @@ function Navbar() {
     const [nav, setNav] = useState(false)
 
     const handleNav = () =>{
-        setNav(true)
+        setNav(!nav)
     }
 
 return (
@@ -38,8 +38,9 @@ return (
                 </div>
             </div>
         </div>
-        <div className={!nav ? 'fixed left-0  top-0 w-full h-screen bg-black/70' : '' }>
-            <div className='fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500'>
+        <div className={nav ? 'md:hidden fixed left-0  top-0 w-full h-screen bg-black/70' : '' }>
+            <div className={nav ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500' 
+                            : 'fixed left-[-100%] p-10 ease-in duration-500' }>
                 <div>
                     <div className='flex w-full item-center justify-between'>
                         <Image src="/../public/assets/Logo.jpg" alt="/" width="87" height="35" />
