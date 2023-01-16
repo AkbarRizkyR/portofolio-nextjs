@@ -43,7 +43,7 @@ return (
                             : 'fixed left-[-100%] p-10 ease-in duration-500' }>
                 <div>
                     <div className='flex w-full item-center justify-between'>
-                        <Image src="/../public/assets/Logo.jpg" alt="/" width="87" height="35" />
+                        <Image src="/../public/assets/Logo.png" alt="/" width="87" height="35" />
                         <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-3 mb-12 cursor-pointer'>
                             <AiOutlineClose/>
                         </div>
