@@ -1,5 +1,7 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
+import {AiOutlineMail} from 'react-icons/ai'
+import {FaGithub, FaLinkedinIn,FaYoutube,FaTwitter, FaInstagram, FaFacebook} from 'react-icons/fa'
 
 function Main() {
     return (
@@ -28,6 +30,32 @@ function Main() {
                     />
                         Front-End Web Developer
                     </h1>
+                    <p className="py-4 text-gray-500 max-w-[70%] m-auto">
+                        Halo, Nama ku akbar, aku adalah seorang Junior Front-End Web Developer.
+                    </p>
+                        <div className="flex items-center justify-between max-w-[330px] m-auto py-4 text-[#5651e5]">
+                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
+                                <FaLinkedinIn />
+                            </div>
+                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
+                                <FaInstagram />
+                            </div>
+                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
+                                <FaGithub />
+                            </div>
+                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
+                                <FaFacebook />
+                            </div>
+                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
+                                <FaTwitter />
+                            </div>
+                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
+                                <FaYoutube />
+                            </div>
+                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
+                                <AiOutlineMail />
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>
