@@ -14,7 +14,7 @@ function Navbar() {
 return (
     <div className='fixed w-full h-20 shadow-xl z-[100]'>
         <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
-            <Image src="/../public/assets/Logo.jpg" alt="/" width="100" height="25" />
+            <Image src="/../public/assets/Logo.png" alt="/" width="70" height="25" />
             <div>
                 <ul className='hidden md:flex'>
                     <Link href='/'>
