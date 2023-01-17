@@ -3,35 +3,47 @@ import React from 'react'
 function About() {
   const tables = [
     { 
-      title: 'SD Negeri 3 Pangkalpinang',
-      major: '-',
-      date: '2003-2009' 
-    },
-    { 
-      title: 'SMP Negeri Muhammadiyah 1',
-      major: '-',
-      date: '2009-2010' 
-    },
-    { 
-      title: 'MTS Negeri Pangkalpinang',
-      major: '-',
-      date: '2010-2012' 
-    },
-    { 
       title: 'SMK Negeri 2 Pangkalpinang',
       major: 'Teknik Jaringan Dan Komputer',
       date: '2012-2015' 
     },
     { 
-      title: 'Telkom University',
+      title: 'Telkom University, Bandung',
       major: 'Teknik Komputer',
       date: '2015-2020' 
     },
     { 
-      title: 'Universitas Padjajaran',
+      title: 'Universitas Padjajaran, Bandung',
       major: 'Administrasi bisnis',
       date: '2021-Sekarang' 
     },
+  ]
+  const org = [
+    {
+      title: 'Software Enginerring Application Research Group Telkom University',
+      task: 'Anggota Reserach Group',
+      date: '2016-2017'
+    },
+    {
+      title: 'Software Enginerring Application Study Group Telkom University',
+      task: 'Anggota Study Group',
+      date: '2017-2018'
+    },
+    {
+      title: 'Overclock HMTK Telkom University',
+      task: 'Anggota Publikasi Dan Dokumentasi',
+      date: '2017-2018'
+    },
+    {
+      title: 'Overhead HMTK Telkom University',
+      task: 'Anggota Publikasi Dan Dokumentasi',
+      date: '2018-2019'
+    },
+    {
+      title: 'BPM HMTK Telkom University',
+      task: 'Ketua Bidang Hubungan Masyarakat',
+      date: '2019-2020'
+    }
   ]
 
   return (
@@ -43,22 +55,22 @@ function About() {
           <p>Halo, Namaku Akbar Rizky Rabbani, Aku Berasal Dari Kota Pangkalpinang Kep.Bangka Belitung</p>
           <p>Saya Berprofesi Sebagai Junior Front End Web Developer</p>
           <h3 className='py-4 capitalize text-[#5651e5]'>Riwayat Sekolah</h3>
-          <div class="overflow-x-auto">
-            <table class="border border-hidden table-auto w-full">
+          <div className='overflow-x-auto'>
+            <table className='border border-hidden table-auto w-full'>
               <thead>
                 <tr>
-                  <th class="bg-gray-400 text-left">Nama Sekolah</th>
-                  <th class="bg-gray-400 text-left">Jurusan</th>
-                  <th class="bg-gray-400 text-left">Tahun</th>
+                  <th className='bg-gray-400 text-left'>Nama Sekolah</th>
+                  <th className='bg-gray-400 text-left'>Jurusan</th>
+                  <th className='bg-gray-400 text-left'>Tahun</th>
                 </tr>
               </thead>
               <tbody>
                 {
                   tables.map((table, index) =>
-                    <tr key={index} class="hover:bg-gray-100">
-                      <td class="text-sm py-4">{ table.title }</td>
-                      <td class="text-sm">{ table.major }</td>
-                      <td class="text-sm">{ table.date }</td>
+                    <tr key={index} className='hover:bg-gray-100'>
+                      <td className='text-sm py-4'>{ table.title }</td>
+                      <td className='text-sm'>{ table.major }</td>
+                      <td className='text-sm'>{ table.date }</td>
                     </tr>
                   )
                 }
@@ -66,8 +78,27 @@ function About() {
             </table>
           </div>
           <h3 className='py-4 capitalize text-[#5651e5]'>Riwayat Organisasi</h3>
-          <div>
-
+          <div className='overflow-x-auto'>
+          <table className='border border-hidden table-auto w-full'>
+              <thead>
+                <tr>
+                  <th className='bg-gray-400 text-left'>Nama Organisasi</th>
+                  <th className='bg-gray-400 text-left'>Posisi</th>
+                  <th className='bg-gray-400 text-left'>Tahun</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  org.map((org, index) =>
+                    <tr key={index} className='hover:bg-gray-100'>
+                      <td className='text-sm py-4'>{ org.title }</td>
+                      <td className='text-sm'>{ org.task }</td>
+                      <td className='text-sm'>{ org.date }</td>
+                    </tr>
+                  )
+                }
+              </tbody>
+            </table>
           </div>
           </div>
       </div>
