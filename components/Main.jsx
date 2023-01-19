@@ -10,12 +10,9 @@ import {
     FaFacebook 
 } from 'react-icons/fa'
 
-import classNames from 'classnames'
+
 
 function Main() {
-    const socialClass = classNames(
-        'rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'
-    )
 
     const socials = [
         <FaLinkedinIn />,
@@ -52,7 +49,7 @@ function Main() {
                         <div className="flex items-center justify-between max-w-[330px] m-auto py-4 text-[#5651e5]">
                             {
                                 socials.map((social, index) => 
-                                    <div key={index} className={socialClass}>
+                                    <div key={index} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
                                         { social }
                                     </div>
                                 )
