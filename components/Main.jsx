@@ -59,9 +59,9 @@ function Main() {
                     </p>
                     <div className="flex items-center justify-between max-w-[330px] m-auto py-4 text-[#5651e5]">
                         {
-                            socials.map((item, index) =>
+                            socials.map((social, index) =>
                                 <div key={index} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                                    {item.social}
+                                    {social.icon}
                                 </div>
                             )
                         }
