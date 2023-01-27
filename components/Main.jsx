@@ -1,13 +1,13 @@
 import { TypeAnimation } from 'react-type-animation'
 import { AiOutlineMail } from 'react-icons/ai'
 
-import { 
-    FaGithub, 
-    FaLinkedinIn, 
-    FaYoutube, 
-    FaTwitter, 
-    FaInstagram, 
-    FaFacebook 
+import {
+    FaGithub,
+    FaLinkedinIn,
+    FaYoutube,
+    FaTwitter,
+    FaInstagram,
+    FaFacebook
 } from 'react-icons/fa'
 
 
@@ -15,13 +15,24 @@ import {
 function Main() {
 
     const socials = [
-        <FaLinkedinIn />,
-        <FaInstagram />,
-        <FaGithub />,
-        <FaFacebook />,
-        <FaTwitter />,
-        <FaYoutube />,
-        <AiOutlineMail />
+        {
+            icon: <FaLinkedinIn />
+        },
+        {
+            icon: <FaGithub />
+        },
+        {
+            icon: <FaYoutube />
+        },
+        {
+            icon: <FaTwitter />
+        },
+        {
+            icon: <FaInstagram />
+        },
+        {
+            icon: <FaFacebook/>
+        },
     ]
 
     return (
@@ -46,15 +57,15 @@ function Main() {
                     <p className="py-4 text-gray-500 max-w-[70%] m-auto">
                         Halo, Nama ku akbar, aku adalah seorang Junior Front-End Web Developer.
                     </p>
-                        <div className="flex items-center justify-between max-w-[330px] m-auto py-4 text-[#5651e5]">
-                            {
-                                socials.map((social, index) => 
-                                    <div key={index} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                                        { social }
-                                    </div>
-                                )
-                            }
-                        </div>
+                    <div className="flex items-center justify-between max-w-[330px] m-auto py-4 text-[#5651e5]">
+                        {
+                            socials.map((item, index) =>
+                                <div key={index} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
+                                    {item.social}
+                                </div>
+                            )
+                        }
+                    </div>
                 </div>
             </div>
         </div>
