@@ -1,6 +1,7 @@
 import { TypeAnimation } from 'react-type-animation'
 import { AiOutlineMail } from 'react-icons/ai'
 
+
 import {
     FaGithub,
     FaLinkedinIn,
@@ -16,62 +17,74 @@ function Main() {
 
     const socials = [
         {
-            icon: <FaLinkedinIn />
+            icon: <FaLinkedinIn size={30} color='#0077B5'/>,
+            link: 'https://www.linkedin.com/in/akbar-rizky-rabbani-a66a20148/'
         },
         {
-            icon: <FaGithub />
+            icon: <FaGithub size={30} color='#181717' />,
+            link: 'https://github.com/AkbarRizkyR'
         },
         {
-            icon: <FaYoutube />
+            icon: <FaYoutube  size={30} color='#FF0000'/>,
+            link: 'https://youtube.com/dislot'
         },
         {
-            icon: <FaTwitter />
+            icon: <FaTwitter size={30} color='#1DA1F2' />,
+            link: 'https://twitter.com/Akbarrizky0098'
         },
         {
-            icon: <FaInstagram />
+            icon: <FaInstagram size={30} color='#833AB4' />,
+            link: 'https://instagram.com/dislost0'
         },
         {
-            icon: <FaFacebook/>
+            icon: <FaFacebook size={30} color='#1877F2' />,
+            link: 'https://facebook.com/Zameas0098'
         },
         {
-            icon: <AiOutlineMail/>
+            icon: <AiOutlineMail size={30} color='#0077B5'/>,
+            link: 'mailto:Arrizki0098@gmail.com'
         },
     ]
 
     return (
-        <div className="w-full h-screen text-center">
-            <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
-                <div>
-                    <p className="uppercase text-sm tracking-widest text-gray-600">
-                        Hello, Welcome To My Portofolio
-                    </p>
-                    <h1 className="py-4 text-gray-700">
-                        <TypeAnimation
-                            sequence={["Namaku Akbar", 3000, "My name is Akbar"]}
-                            wrapper="span"
-                            cursor={true}
-                            repeat={1}
-                            className="text-[#5651e5]"
-                        />
-                    </h1>
-                    <h1 className="py-2 text-gray-700">
-                        Front-End Web Developer
-                    </h1>
-                    <p className="py-4 text-gray-500 max-w-[70%] m-auto">
-                        Halo, Nama ku akbar, aku adalah seorang Junior Front-End Web Developer.
-                    </p>
-                    <div className="flex items-center justify-between max-w-[330px] m-auto py-4 text-[#5651e5]">
-                        {
-                            socials.map((social, index) =>
-                                <div key={index} className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                                    {social.icon}
-                                </div>
-                            )
-                        }
+            <div className="w-full h-screen text-center">
+                <div className="max-w-1240px w-full h-full mx-auto p-2 flex justify-center items-center">
+                    <div className="text-black-50">
+                        <p className="uppercase text-sm tracking-widest">
+                            Hello, Welcome To My Portofolio
+                        </p>
+                        <h1 className="py-4 text-3xl font-medium font-bold text-[#5651e5]">
+                            <TypeAnimation
+                                sequence={["Namaku Akbar", 3000, "My name is Akbar"]}
+                                wrapper="span"
+                                cursor={true}
+                                repeat={1}
+                            />
+                        </h1>
+                        <h1 className="py-2 text-3xl font-medium">
+                            Front-End Web Developer
+                        </h1>
+                        <p className="py-4 text-[#5651e5] max-w-70% m-auto">
+                            Halo, Nama ku akbar, aku adalah seorang Junior Front-End Web Developer.
+                        </p>
+                        <div className="flex items-center justify-between max-w-330px m-auto py-4">
+                            {
+                                socials.map((socials, index) =>
+                                    <a
+                                        key={index}
+                                        href={socials.link}
+                                        className="relative rounded-full shadow-lg hover:shadow-2xl p-3 cursor-pointer transition-all duration-500 ease-in"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                    >
+                                        {socials.icon}
+                                    </a>
+                                )
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
     );
 }
 
