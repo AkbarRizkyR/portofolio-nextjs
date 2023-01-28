@@ -33,6 +33,9 @@ function Main() {
         {
             icon: <FaFacebook/>
         },
+        {
+            icon: <AiOutlineMail/>
+        },
     ]
 
     return (
