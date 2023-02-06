@@ -1,106 +1,79 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import {AiOutlineClose, AiOutlineMenu, AiOutlineMail} from 'react-icons/ai'
-import {FaGithub, FaLinkedinIn,FaYoutube,FaTwitter, FaInstagram, FaFacebook} from 'react-icons/fa'
+import { AiOutlineClose, AiOutlineMenu, AiOutlineMail } from 'react-icons/ai'
+import { FaGithub, FaLinkedinIn, FaYoutube, FaTwitter, FaInstagram, FaFacebook } from 'react-icons/fa'
 
 function Navbar() {
     const [nav, setNav] = useState(false)
 
-    const handleNav = () =>{
+    const handleNav = () => {
         setNav(!nav)
     }
 
-return (
-    <div className='fixed w-full h-20 shadow-xl z-[100]'>
-        <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16'>
-            <Image src="/../public/assets/Logo.png" alt="/" width="70" height="25" />
-            <div>
-                <ul className='hidden md:flex'>
-                    <Link href='/'>
-                        <li className='ml-10 text-sm uppercase hover:border-b'>home</li>
-                    </Link>
-                    <Link href='/'>
-                        <li className='ml-10 text-sm uppercase hover:border-b'>about me</li>
-                    </Link>
-                    <Link href='/'>
-                        <li className='ml-10 text-sm uppercase hover:border-b'>skill</li>
-                    </Link>
-                    <Link href='/'>
-                        <li className='ml-10 text-sm uppercase hover:border-b'>project</li>
-                    </Link>
-                    <Link href='/'>
-                        <li className='ml-10 text-sm uppercase hover:border-b'>contact me</li>
-                    </Link>
-                </ul>
-                <div onClick={handleNav} className='md:hidden'>
-                    <AiOutlineMenu size={25}/>
-                </div>
-            </div>
-        </div>
-        <div className={nav ? 'md:hidden fixed left-0  top-0 w-full h-screen bg-black/70' : '' }>
-            <div className={nav ? 'fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500' 
-                            : 'fixed left-[-100%] p-10 ease-in duration-500' }>
-                <div>
-                    <div className='flex w-full item-center justify-between'>
-                        <Image src="/../public/assets/Logo.png" alt="/" width="87" height="35" />
-                        <div onClick={handleNav} className='rounded-full shadow-lg shadow-gray-400 p-3 mb-12 cursor-pointer'>
-                            <AiOutlineClose/>
-                        </div>
+    const socials = [
+        {
+            icon: <FaLinkedinIn />,
+            link: 'https://www.linkedin.com/in/akbar-rizky-rabbani-a66a20148/'
+        },
+        {
+            icon: <FaGithub />,
+            link: 'https://github.com/AkbarRizkyR'
+        },
+        {
+            icon: <FaTwitter />,
+            link: 'https://twitter.com/Akbarrizky0098'
+        },
+        {
+            icon: <FaInstagram />,
+            link: 'https://instagram.com/dislost0'
+        },
+        {
+            icon: <AiOutlineMail />,
+            link: 'mailto:Arrizki0098@gmail.com'
+        },
+    ]
+    const [menuItems, setMenuItems] = useState([
+        { name: 'Home', href: '/' },
+        { name: 'About Me', href: '/about-me' },
+        { name: 'Skills', href: '/skills' },
+        { name: 'Projects', href: '/projects' },
+        { name: 'Contact Me', href: '/contact-me' },
+    ]);
+
+    return (
+        <header className="bg-white fixed w-full shadow-xl z-50">
+            <div className="flex items-center justify-between max-w-7xl mx-auto p-4 md:p-8">
+                <Link href="/">
+                    <div>
+                        <Image src="/assets/logo.png" alt="Logo" className="h-12 md:h-16" width="60" height="25" />
                     </div>
-                    <div className='border-b border-gray-500'>
-                        <p className='w-[85%] sm:w-[90%] py-4'>Hello, My Name Is Akbar Rizky Rabbani</p>
-                    </div>
-                </div>
-                <div className='py-4 flex-col'>
-                    <ul className='uppercase'>
-                        <Link href='/'>
-                            <li className='py-4 text-sm'>Home</li>
-                        </Link>
-                        <Link href='/'>
-                            <li className='py-4 text-sm'>About Me</li>
-                        </Link>
-                        <Link href='/'>
-                            <li className='py-4 text-sm'>Skill</li>
-                        </Link>
-                        <Link href='/'>
-                            <li className='py-4 text-sm'>Project</li>
-                        </Link>
-                        <Link href='/'>
-                            <li className='py-4 text-sm'>Contact Me</li>
-                        </Link>
+                </Link>
+                <nav className={`${nav ? "block" : "hidden"} md:block md:flex md:items-center w-full md:w-auto transition-all duration-500 ease-out`}>
+                    <ul className="md:flex items-center justify-between w-full text-center md:text-left">
+                        {menuItems.map(item => (
+                            <li className="md:ml-6" key={item.id}>
+                                <Link href={item.href}>
+                                    <div className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                                        {item.name}
+                                    </div>
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
-                    <div className='pt-40'>
-                        <p className='uppercase trackinig-widest text-[#5651e5]'>My Sosial Media</p>
-                        <div className='flex items-center justify-between my-4 w-full sm:w-[80%]'>
-                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                                <FaLinkedinIn />
-                            </div>
-                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                                <FaInstagram />
-                            </div>
-                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                                <FaGithub />
-                            </div>
-                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                                <FaFacebook />
-                            </div>
-                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                                <FaTwitter />
-                            </div>
-                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                                <FaYoutube />
-                            </div>
-                            <div className='rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500'>
-                                <AiOutlineMail />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </nav>
+                <button
+                    className="block md:hidden border border-gray-400 rounded p-3 mt-4"
+                    onClick={handleNav}
+                >
+                    <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
             </div>
-        </div>
-    </div>
-  )
+        </header>
+    )
 }
 
 export default Navbar

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 import { AiOutlineMail } from 'react-icons/ai'
 import { FaGithub, FaLinkedinIn, FaTwitter, FaInstagram } from 'react-icons/fa'
@@ -48,7 +49,7 @@ function Contact() {
                     {/* left */}
                     <div className='col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4'>
                         <div className='lg:p-4 h-full'>
-                            <img className='rounded-xl hover:scale-105 ease-in duration-300' src="" alt="" />
+                            <Image className='rounded-xl hover:scale-105 ease-in duration-300' src="" alt="" />
                             <div>
                                 <h2 className='py-2 text-3xl font-medium'>
                                     Akbar Rizky Rabbani
@@ -102,14 +103,6 @@ function Contact() {
                             </form>
                         </div>
                     </div>
-
-                    {/* <div className='flex justify-center py-12'>
-                        <Link href='/'>
-                            <div className='rounded-full shadow-lg shadow-gray-400 p-4 cursor-pointer hover:scale-110 ease-in duration-300'>
-                                <HiOutlineChevronDoubleUp className='text-#5651e5' size={30}px />
-                            </div>
-                        </Link>
-                    </div> */}
                 </div>
             </div>
         </div>

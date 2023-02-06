@@ -1,4 +1,5 @@
 import React from 'react'
+import { TypeAnimation } from 'react-type-animation'
 
 function About() {
   const tables = [
@@ -47,44 +48,47 @@ function About() {
   ]
 
   return (
-    <div className='w-full md:h-screen p-2 flex items-center py-16'>
-      <div className='max-w-[1240px] m-auto md:grid-cols-3 gap-8'>
-        <div className='col-span-2'>
-          <div className='py-4'>
-            <h2 className='text-2xl'>About Me</h2>
-            <div className='my-4'>
-              <h3 className='text-xl'>Who Am I?</h3>
-              <p className='text-lg'>Halo, Namaku Akbar Rizky Rabbani, Aku Berasal Dari Kota Pangkalpinang Kep.Bangka Belitung</p>
-              <p className='text-lg'>Saya Berprofesi Sebagai Junior Front End Web Developer</p>
-            </div>
+    <div className='flex flex-col items-center justify-center w-full bg-gray-200'>
+      <div className='p-6 md:p-16 mx-auto'>
+        <div className='max-w-1240px m-auto px-2 py-4 w-full'>
+          <h2 className='text-2xl text-gray-800 font-bold'>About Me</h2>
+          <div className='my-10'>
+            <h3 className='text-xl font-medium text-gray-700'>
+              <TypeAnimation
+                sequence={["Siapa Aku?", 3000, "Who Am I?"]}
+                wrapper="span"
+                cursor={true}
+                repeat={1}
+              />
+            </h3>
+            <p className='text-lg text-gray-600'>
+              Halo, Namaku Akbar Rizky Rabbani, Aku Berasal Dari Kota Pangkalpinang Kep.Bangka Belitung. Saya Berprofesi Sebagai Junior Front End Web Developer.
+            </p>
           </div>
-          <div className='py-4'>
-            <h3 className='capitalize text-[#5651e5]'>Riwayat Sekolah</h3>
-            <div className='grid grid-cols-3 gap-4'>
-              {
-                tables.map((tables, index) =>
-                  <div key={index} className='bg-white rounded-lg shadow-md p-4'>
-                    <h4 className='text-lg'>{tables.title}</h4>
-                    <p className='text-sm'>{tables.major}</p>
-                    <p className='text-sm'>{tables.date}</p>
-                  </div>
-                )
-              }
-            </div>
+          <h3 className='capitalize text-indigo-500 font-medium'>Riwayat Sekolah</h3>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mt-4'>
+            {
+              tables.map((tables, index) =>
+                <div key={index} className='bg-white rounded-lg shadow-md p-4'>
+                  <h4 className='text-lg font-medium text-gray-800'>{tables.title}</h4>
+                  <p className='text-sm text-gray-600'>{tables.major}</p>
+                  <p className='text-sm text-gray-600'>{tables.date}</p>
+                </div>
+              )
+            }
           </div>
-          <div className='py-4'>
-            <h3 className='capitalize text-[#5651e5]'>Riwayat Organisasi</h3>
-            <div className='grid grid-cols-3 gap-4'>
-              {
-                org.map((org, index) =>
-                  <div key={index} className='bg-white rounded-lg shadow-md p-4'>
-                    <h4 className='text-lg'>{org.title}</h4>
-                    <p className='text-sm'>{org.task}</p>
-                    <p className='text-sm'>{org.date}</p>
-                  </div>
-                )
-              }
-            </div>
+
+          <h3 className='capitalize text-indigo-500 font-medium mt-10'>Riwayat Organisasi</h3>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mt-4'>
+            {
+              org.map((org, index) =>
+                <div key={index} className='bg-white rounded-lg shadow-md p-4 max-w-full'>
+                  <h4 className='text-lg font-medium text-gray-800'>{org.title}</h4>
+                  <p className='text-sm text-gray-600'>{org.task}</p>
+                  <p className='text-sm text-gray-600'>{org.date}</p>
+                </div>
+              )
+            }
           </div>
         </div>
       </div>
